@@ -1,0 +1,19 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  site1:
+    build: site1
+    environment:
+      - "VIRTUAL_HOST=site1.dev,site1.com"
+
+  site2:
+    build: site2
+    environment:
+      - "VIRTUAL_HOST=site2.dev, site2.com"
