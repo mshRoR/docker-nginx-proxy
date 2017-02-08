@@ -1,4 +1,4 @@
-From nginx:alpine
+FROM nginx:alpine
 
 RUN mkdir -p /var/www/site2.com
 COPY index.html /var/www/site2.com

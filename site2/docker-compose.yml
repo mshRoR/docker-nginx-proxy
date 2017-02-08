@@ -8,14 +8,10 @@ services:
 #    volumes:
 #      - /var/run/docker.sock:/tmp/docker.sock:ro
 
-#  app:
-#    build: .
-#    environment:
-#      - "VIRTUAL_HOST=site1.com"
-  site1:
+  site2:
     build: .
     environment:
-      - "VIRTUAL_HOST=site1.dev,site1.com"
+      - "VIRTUAL_HOST=site2.dev, site2.com"
     networks:
       - nginx-proxy
 
